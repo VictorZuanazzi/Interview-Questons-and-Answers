@@ -5,12 +5,16 @@ import math
 import torch
 
 
-def attention_scores_broken(Q, K):
+def attention_scores_broken(Q: torch.Tensor, K: torch.Tensor) -> torch.Tensor:
     # BUGS: wrong transpose; missing 1/sqrt(d); mask broadcast
     return Q @ K
 
 
-def attention_scores_fixed(Q, K, mask=None):
+def attention_scores_fixed(
+    Q: torch.Tensor,
+    K: torch.Tensor,
+    mask: torch.Tensor | None = None,
+) -> torch.Tensor:
     """Q,K: (B, H, T, D). Return scores (B, H, T, T), scaled.
     Optional mask: True means masked (set to -inf).
     """

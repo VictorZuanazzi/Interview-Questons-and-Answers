@@ -1,9 +1,10 @@
 """One-pass streaming mean and sample standard deviation."""
 
 import math
+from collections.abc import Iterable
 
 
-def streaming_mean_std(stream):
+def streaming_mean_std(stream: Iterable[float]) -> tuple[float, float]:
     """One-pass mean and sample std (ddof=1 if n>1 else 0)."""
     n, mean, M2 = 0, 0.0, 0.0
     for x in stream:

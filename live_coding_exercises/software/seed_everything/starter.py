@@ -6,6 +6,6 @@ import numpy as np
 import torch
 
 
-def seed_everything(seed: int):
+def seed_everything(seed: int) -> None:
     """Seed random, numpy, torch; set cudnn deterministic flags when available."""
     raise NotImplementedError

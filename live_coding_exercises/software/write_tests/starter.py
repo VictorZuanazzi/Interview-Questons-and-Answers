@@ -22,26 +22,26 @@ import torch
 
 
 @pytest.fixture
-def config():
+def config() -> dict:
     # YOUR CODE HERE
     raise NotImplementedError
 
 
-def test_resolve_artifact_root_uses_default():
+def test_resolve_artifact_root_uses_default() -> None:
     # YOUR CODE HERE
     raise NotImplementedError
 
 
-def test_env_var_overrides_default(monkeypatch):
+def test_env_var_overrides_default(monkeypatch: pytest.MonkeyPatch) -> None:
     # YOUR CODE HERE: monkeypatch.setenv("ARTIFACT_ROOT", ...)
     raise NotImplementedError
 
 
-def test_checkpoint_round_trip(tmp_path):
+def test_checkpoint_round_trip(tmp_path: Path) -> None:
     # YOUR CODE HERE: torch.save / torch.load under tmp_path
     raise NotImplementedError
 
 
-def test_empty_default_raises():
+def test_empty_default_raises() -> None:
     # YOUR CODE HERE: pytest.raises(ValueError)
     raise NotImplementedError

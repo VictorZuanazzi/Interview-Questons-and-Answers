@@ -3,7 +3,7 @@
 import numpy as np
 
 
-def binary_iou(mask_true, mask_pred):
+def binary_iou(mask_true: np.ndarray, mask_pred: np.ndarray) -> float:
     """Boolean or 0/1 arrays, same shape. Return IoU in [0,1]."""
     a = np.asarray(mask_true).astype(bool)
     b = np.asarray(mask_pred).astype(bool)
@@ -12,7 +12,10 @@ def binary_iou(mask_true, mask_pred):
     return float(inter / union) if union > 0 else 0.0
 
 
-def box_iou(box_a, box_b):
+def box_iou(
+    box_a: tuple[float, float, float, float],
+    box_b: tuple[float, float, float, float],
+) -> float:
     """Each box = (x1, y1, x2, y2). Handle no-overlap and zero-area."""
     ax1, ay1, ax2, ay2 = box_a
     bx1, by1, bx2, by2 = box_b

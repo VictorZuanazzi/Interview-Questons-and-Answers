@@ -3,7 +3,10 @@
 import numpy as np
 
 
-def precision_recall_f1_broken(y_true, y_pred):
+def precision_recall_f1_broken(
+    y_true: np.ndarray | list[int],
+    y_pred: np.ndarray | list[int],
+) -> tuple[float, float, float]:
     y_true = np.asarray(y_true)
     y_pred = np.asarray(y_pred)
     # BUGS: `and` instead of `&`; no zero-division guard; ~ on ints
@@ -16,6 +19,9 @@ def precision_recall_f1_broken(y_true, y_pred):
     return precision, recall, f1
 
 
-def precision_recall_f1_fixed(y_true, y_pred):
+def precision_recall_f1_fixed(
+    y_true: np.ndarray | list[int],
+    y_pred: np.ndarray | list[int],
+) -> tuple[float, float, float]:
     # YOUR FIX HERE
     raise NotImplementedError

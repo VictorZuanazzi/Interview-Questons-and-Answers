@@ -3,7 +3,7 @@
 import numpy as np
 
 
-def voxel_downsample(points, voxel_size):
+def voxel_downsample(points: np.ndarray, voxel_size: float) -> np.ndarray:
     """points (N,3). Keep first point in each voxel. Return (M,3)."""
     pts = np.asarray(points, dtype=float)
     seen, out = set(), []

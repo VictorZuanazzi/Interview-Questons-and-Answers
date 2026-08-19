@@ -3,7 +3,7 @@
 import numpy as np
 
 
-def pairwise_l2(a, b):
+def pairwise_l2(a: np.ndarray, b: np.ndarray) -> np.ndarray:
     """Return (N, M) pairwise Euclidean distances."""
     a = np.asarray(a, dtype=float)
     b = np.asarray(b, dtype=float)

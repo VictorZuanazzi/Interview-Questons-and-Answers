@@ -3,7 +3,7 @@
 import numpy as np
 
 
-def _box_iou(box_a, box_b):
+def _box_iou(box_a: np.ndarray, box_b: np.ndarray) -> float:
     ax1, ay1, ax2, ay2 = box_a
     bx1, by1, bx2, by2 = box_b
     ix1, iy1 = max(ax1, bx1), max(ay1, by1)
@@ -16,7 +16,7 @@ def _box_iou(box_a, box_b):
     return float(inter / union) if union > 0 else 0.0
 
 
-def nms(boxes, scores, iou_threshold=0.5):
+def nms(boxes: np.ndarray, scores: np.ndarray, iou_threshold: float = 0.5) -> list[int]:
     """boxes (N,4) xyxy, scores (N,). Return kept indices in score order."""
     boxes = np.asarray(boxes, dtype=float)
     scores = np.asarray(scores, dtype=float)

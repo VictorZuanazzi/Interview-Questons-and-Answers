@@ -3,7 +3,12 @@
 import numpy as np
 
 
-def calibration_params(x_min, x_max, qmin=0, qmax=255):
+def calibration_params(
+    x_min: float,
+    x_max: float,
+    qmin: int = 0,
+    qmax: int = 255,
+) -> tuple[float, int]:
     """Return (scale, zero_point) for affine quantization."""
     if x_max == x_min:
         x_max = x_min + 1e-8

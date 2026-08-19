@@ -5,7 +5,7 @@ from concurrent.futures import ThreadPoolExecutor
 import numpy as np
 
 
-def decode_jpeg(jpeg_bytes: bytes):
+def decode_jpeg(jpeg_bytes: bytes) -> np.ndarray:
     import cv2
 
     buf = np.frombuffer(jpeg_bytes, dtype=np.uint8)
@@ -15,6 +15,9 @@ def decode_jpeg(jpeg_bytes: bytes):
     return img
 
 
-def decode_many(jpeg_bytes_list, max_workers=4):
+def decode_many(
+    jpeg_bytes_list: list[bytes],
+    max_workers: int = 4,
+) -> list[np.ndarray]:
     """Decode list of JPEG bytes -> list of HxWxC arrays."""
     raise NotImplementedError

@@ -3,7 +3,7 @@
 import numpy as np
 
 
-def one_hot(indices, n_classes):
+def one_hot(indices: np.ndarray, n_classes: int) -> np.ndarray:
     """indices (N,) -> (N, C) float array."""
     idx = np.asarray(indices)
     out = np.zeros((len(idx), n_classes), dtype=float)
@@ -11,7 +11,7 @@ def one_hot(indices, n_classes):
     return out
 
 
-def gather_rows(mat, indices):
+def gather_rows(mat: np.ndarray, indices: np.ndarray) -> np.ndarray:
     """mat (N, C), indices (N,) -> (N,) values mat[i, indices[i]]."""
     mat = np.asarray(mat)
     indices = np.asarray(indices)

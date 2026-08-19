@@ -1,7 +1,0 @@
-numpy>=2.0
-torch
-pytest
-ipytest
-ipykernel
-jupyter
-opencv-python-headless

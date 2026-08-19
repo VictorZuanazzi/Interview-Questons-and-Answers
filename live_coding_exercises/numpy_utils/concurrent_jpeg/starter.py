@@ -1,0 +1,20 @@
+"""Concurrent JPEG decoding with a thread pool."""
+
+from concurrent.futures import ThreadPoolExecutor
+
+import numpy as np
+
+
+def decode_jpeg(jpeg_bytes: bytes):
+    import cv2
+
+    buf = np.frombuffer(jpeg_bytes, dtype=np.uint8)
+    img = cv2.imdecode(buf, cv2.IMREAD_COLOR)
+    if img is None:
+        raise ValueError("failed to decode")
+    return img
+
+
+def decode_many(jpeg_bytes_list, max_workers=4):
+    """Decode list of JPEG bytes -> list of HxWxC arrays."""
+    raise NotImplementedError

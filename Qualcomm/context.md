@@ -742,3 +742,10 @@ Traps that show up in live coding:
 - Avoid `~y_true` on integer arrays: `~0 == -1`, `~1 == -2`. Write `y_true == 0` explicitly.
 - Don't leave a second experimental formula that overwrites the correct one.
 - Don't compute `tn` if you don't use it.
+
+
+So for the ML engineer onsite:
+•⁠  ⁠python deep dive (language syntax, builtins, testing, algorithms and data structures)
+•⁠  ⁠ci/cd, container/virtualization, coding practices, software eng paradigms, android/web experience
+•⁠  ⁠ml/dl theory and practical approaches/debugging
+•⁠  ⁠behavioral

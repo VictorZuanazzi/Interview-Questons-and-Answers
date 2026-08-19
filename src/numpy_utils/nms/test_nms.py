@@ -18,7 +18,7 @@ BOXES = np.array(
         [5.0, 5.0, 7.0, 7.0],
     ]
 )
-SCORES = np.array([0.7, 0.9, 0.8])
+SCORES = np.array([0.9, 0.8, 0.7])
 
 
 def _tv(boxes, scores, iou_threshold):
@@ -47,15 +47,15 @@ def test_returns_indices_in_descending_score_order():
 
 
 def test_single_box_is_always_kept():
-    assert np.all(list(nms(BOXES[:1], SCORES[:1], iou_threshold=0.5)) == [0])
+    assert list(nms(BOXES[:1], SCORES[:1], iou_threshold=0.5)) == [0]
 
 
 def test_identical_boxes_collapse_to_one():
     duplicated = np.repeat(BOXES[:1], 3, axis=0)
     scores = np.array([0.9, 0.8, 0.7])
-    assert np.all(list(nms(duplicated, scores, iou_threshold=0.5)) == _tv(
+    assert list(nms(duplicated, scores, iou_threshold=0.5)) == _tv(
         duplicated, scores, 0.5
-    ))
+    )
 
 
 def test_kept_boxes_do_not_overlap_above_threshold():

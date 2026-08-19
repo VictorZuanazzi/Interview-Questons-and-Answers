@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "ml-interview-qa"
+version = "0.0.1"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.0",
+    "torch",
+    "torchvision",
+    "scikit-learn",
+    "scipy",
+    "opencv-python-headless",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8",]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "src"]
+pythonpath = ["."]

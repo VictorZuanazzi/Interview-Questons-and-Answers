@@ -2,7 +2,7 @@ import pytest
 
 import numpy as np
 
-from live_coding_exercises.metrics.precision_recall_f1.workspace import precision_recall_f1
+from src.metrics.precision_recall_f1.solution import precision_recall_f1
 
 from sklearn.metrics import f1_score, precision_score, recall_score
 
@@ -48,5 +48,5 @@ class TestMetrics:
         precision, recall, f1 = precision_recall_f1(y_true, y_pred)
 
         assert precision == pytest.approx(precision_t), f"Expected {precision_t}, but got {precision=} for input {y_true=} and {y_pred=}"
-        assert recall == pytest.approx(recall_t), f"Expected {recall}, but got {recall=} for input {y_true=} and {y_pred=}"
-        assert f1 == pytest.approx(f1_t), f"Expected {f1}, but got {f1=} for input {y_true=} and {y_pred=}"
+        assert recall == pytest.approx(recall_t), f"Expected {recall_t}, but got {recall=} for input {y_true=} and {y_pred=}"
+        assert f1 == pytest.approx(f1_t), f"Expected {f1_t}, but got {f1=} for input {y_true=} and {y_pred=}"

@@ -15,7 +15,3 @@ build/
 
 # Personal application materials
 **/.private/
-
-# Live-coding practice surfaces (reset from starter.py)
-live_coding_exercises/**/workspace.py
-live_coding_exercises/attempts/

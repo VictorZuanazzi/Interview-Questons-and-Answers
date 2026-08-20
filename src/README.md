@@ -1,6 +1,6 @@
 # Live coding exercises
 
-Repeatable drills without notebooks. Each exercise is a small folder:
+Repeatable drills. Each exercise is a small folder:
 
 ```text
 src/metrics/softmax/
@@ -54,6 +54,7 @@ cp live_coding_exercises/metrics/softmax/starter.py \
 | Affine quantize / dequantize | `quantization/affine_quantize/` |
 | Calibration params from range | `quantization/calibration_params/` |
 | MinMax PTQ observer | `quantization/minmax_observer/` |
+| NN/DL practical (45-min notebook) | `torch_modules/nn_dl_practical/` |
 | Tiny MLPClassifier | `torch_modules/mlp_classifier/` |
 | Manual SGD step | `torch_modules/sgd_step/` |
 | Sliding-window Dataset | `torch_modules/sliding_window_dataset/` |
@@ -75,6 +76,7 @@ cp live_coding_exercises/metrics/softmax/starter.py \
 | Artifact path helper | `software/artifact_path/` |
 | Occupancy grid | `spatial/occupancy_grid/` |
 | Voxel downsample | `spatial/voxel_downsample/` |
+| Binary search | `algorithms/binary_search/` |
 
 ## Session checklist (25–40 min)
 

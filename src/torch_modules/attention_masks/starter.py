@@ -12,4 +12,5 @@ def causal_mask(seq_len: int) -> np.ndarray:
 
 def key_padding_mask(lengths: np.ndarray | list[int], max_len: int) -> np.ndarray:
     """True for pad positions. lengths: list/array of ints. Shape (B, max_len)."""
+    
     raise NotImplementedError

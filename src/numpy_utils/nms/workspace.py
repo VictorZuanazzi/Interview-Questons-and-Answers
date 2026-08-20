@@ -6,7 +6,7 @@ import numpy as np
 def compute_iou(box1, box2):
 
     max_start_x = np.maximum(box1[0], box2[0])
-    max_start_y = np.maximum(box1[0], box2[0])
+    max_start_y = np.maximum(box1[1], box2[1])
     min_end_x = np.minimum(box1[2], box2[2])
     min_end_y = np.minimum(box1[3], box2[3])
 

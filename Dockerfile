@@ -8,5 +8,4 @@ COPY pyproject.toml uv.lock ./
 RUN uv sync --locked --extra dev --no-install-project
 
 COPY . .
-
-CMD ["pytest", "."]
+ENV PATH="/app/.venv/bin:$PATH"

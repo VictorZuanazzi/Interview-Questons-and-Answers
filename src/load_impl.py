@@ -44,3 +44,17 @@ def load_impl(exercise_dir: Path | str) -> ModuleType:
     sys.modules[module_name] = module
     spec.loader.exec_module(module)
     return module
+
+
+def load_impl_for_test(test_file: Path | str) -> ModuleType:
+    """Load the implementation for an exercise given a file under tests/."""
+    test_file = Path(test_file).resolve()
+    parts = test_file.parts
+    try:
+        tests_idx = parts.index("tests")
+    except ValueError as exc:
+        raise ValueError(f"Test file must live under tests/: {test_file}") from exc
+
+    root = Path(*parts[:tests_idx])
+    rel = Path(*parts[tests_idx + 1 : -1])
+    return load_impl(root / "src" / rel)

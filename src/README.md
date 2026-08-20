@@ -3,12 +3,14 @@
 Repeatable drills without notebooks. Each exercise is a small folder:
 
 ```text
-metrics/softmax/
+src/metrics/softmax/
   prompt.md      # problem + what to say out loud
   starter.py     # stubs only — source of truth for a fresh attempt
   workspace.py   # your attempt (gitignored; copy from starter)
   solution.py    # reference implementation
-  test_*.py      # pytest judge
+
+tests/metrics/softmax/
+  test_softmax.py   # pytest judge
 ```
 
 ## Practice a drill
